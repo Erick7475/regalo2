@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px; /* Aumentado el ancho máximo del contenedor */
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    color: #ff6f61;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.envelope {
+    position: relative;
+    width: 300px; /* Aumentado el ancho del sobre */
+    height: 200px; /* Aumentada la altura del sobre */
+    background: #fff;
+    border: 2px solid #ff6f61;
+    border-radius: 5px;
+    margin: 20px auto;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #ff6f61;
+    border-bottom: 2px solid #ff6f61;
+    border-radius: 5px 5px 0 0;
+    transform-origin: top;
+    transition: transform 1s;
+}
+
+.letter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0;
+    transition: opacity 1s;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.message {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+    text-align: left;
+    font-family: 'Great Vibes', cursive;
+    line-height: 1.5;
+}
+
+.seal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff6f61;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Arial', sans-serif;
+}
+
+button:hover {
+    background-color: #ff3d3d;
+}
+
+#emojiContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden; /* Ocultar los emojis que se salgan del contenedor */
+}
+
+.emoji {
+    position: absolute;
+    font-size: 2em;
+    animation: fall linear;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-100vh); /* Empezar desde arriba de la página */
+    }
+    to {
+        transform: translateY(100vh); /* Terminar abajo de la página */
+    }
+}
